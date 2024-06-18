@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="TestRunner" Id="{9987c82e-34e1-4813-9836-1a87627bcb36}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM TestRunner
+VAR
+	packmlTestSuite : PackMLTestSuite;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TcUnit.Run();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

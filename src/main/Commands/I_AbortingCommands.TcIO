@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_AbortingCommands" Id="{d9a12bf1-10a0-0e97-0748-591bd5c252aa}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_AbortingCommands]]></Declaration>
+    <Method Name="StateComplete" Id="{017d2983-b7e5-4445-82f6-ae0b5327024d}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

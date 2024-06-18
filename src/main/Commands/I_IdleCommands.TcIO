@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_IdleCommands" Id="{98a18d41-1301-03fd-1f24-fccf520ed562}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_IdleCommands]]></Declaration>
+    <Method Name="Abort" Id="{0c7667c6-a706-494a-9950-a42bd0f9f67e}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{10ff5ee6-413f-0d0d-317f-29627efddc1f}">
+      <Declaration><![CDATA[METHOD PUBLIC Start]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{9afaa9a1-e547-484d-a795-ed679c222660}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

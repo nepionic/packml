@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PackMLTestSuite" Id="{a4e9f584-02fa-02ab-0aa2-33b7dba803f2}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PackMLTestSuite EXTENDS TcUnit.FB_TestSuite
+VAR
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CheckBasicStateMachineCycle();]]></ST>
+    </Implementation>
+    <Method Name="CheckBasicStateMachineCycle" Id="{bf387793-5f99-0aa2-3285-02bd6db473a3}">
+      <Declaration><![CDATA[METHOD PUBLIC CheckBasicStateMachineCycle
+VAR
+	stateMachine : nepionic_packml.StateMachine;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Test('CheckStateMachine');
+
+AssertTrue(
+	Condition := stateMachine.IsIdle,
+	Message := 'State machine is not in Idle state immediately after creation'
+);
+
+stateMachine.Start();
+AssertTrue(
+	Condition := stateMachine.IsStarting,
+	Message := 'State machine is not in Starting state immediately after Start action'
+);
+
+stateMachine.StateComplete();
+AssertTrue(
+	Condition := stateMachine.IsExecuting,
+	Message := 'State machine is not in Execute state immediately after Starting state complete'
+);
+
+stateMachine.StateComplete();
+AssertTrue(
+	Condition := stateMachine.IsCompleting,
+	Message := 'State machine is not in Completing state immediately after Execute state complete'
+);
+
+stateMachine.StateComplete();
+AssertTrue(
+	Condition := stateMachine.IsComplete,
+	Message := 'State machine is not in Complete state immediately after Completing state complete'
+);
+
+stateMachine.Reset();
+AssertTrue(
+	Condition := stateMachine.IsResetting,
+	Message := 'State machine is not in Resetting state immediately after Reset action'
+);
+
+stateMachine.StateComplete();
+AssertTrue(
+	Condition := stateMachine.IsIdle,
+	Message := 'State machine is not in Idle state immediately after Resetting state complete'
+);
+
+Test_Finished();]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

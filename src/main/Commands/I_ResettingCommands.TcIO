@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_ResettingCommands" Id="{8d330c53-dd73-014c-3c2b-ac3d4e386b6d}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_ResettingCommands]]></Declaration>
+    <Method Name="Abort" Id="{1a8fcfa0-7e85-4966-8174-eeac0f03734a}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="StateComplete" Id="{e2b64fcf-c81a-4a11-9ec4-2b60462de974}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{f4b6d894-ef87-49b2-b8df-669443a04d76}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

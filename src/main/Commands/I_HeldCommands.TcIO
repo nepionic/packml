@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_HeldCommands" Id="{39048063-0d8e-08f0-155a-0e9a16743f7e}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_HeldCommands]]></Declaration>
+    <Method Name="Abort" Id="{97c2f5e3-ac64-4ebb-9359-7827843ff7c5}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{a9c13afd-72fd-4d6c-b7b7-3fd0df820f6e}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+    <Method Name="Unhold" Id="{b1afe03d-1a2c-0ac6-15ac-16a5319470a8}">
+      <Declaration><![CDATA[METHOD PUBLIC Unhold]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_SuspendedCommands" Id="{f31c0d5b-acac-0491-1bc4-9e5110404f07}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_SuspendedCommands]]></Declaration>
+    <Method Name="Abort" Id="{9134edc0-35df-4e22-9894-227f597c7f41}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{f55dc1d3-4853-4e42-ad1b-4354fd287f20}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+    <Method Name="Unsuspend" Id="{199c3e50-b73d-0b1c-0fc2-c7e590019e1b}">
+      <Declaration><![CDATA[METHOD PUBLIC Unsuspend]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

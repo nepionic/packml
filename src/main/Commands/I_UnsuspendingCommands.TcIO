@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_UnsuspendingCommands" Id="{100e6468-f259-0ece-08ab-ed447511f482}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_UnsuspendingCommands]]></Declaration>
+    <Method Name="Abort" Id="{4b414512-4c8f-41e4-bd5c-cf0e27928011}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="StateComplete" Id="{6b7bf8ad-dd2f-4358-9f09-fdfa46e48b59}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{d2e2d137-0f37-43c9-b678-bba7b4ffe537}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

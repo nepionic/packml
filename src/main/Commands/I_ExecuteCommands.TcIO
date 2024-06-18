@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_ExecuteCommands" Id="{9dab06e0-c06a-0aec-34db-a51978aa62c9}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_ExecuteCommands]]></Declaration>
+    <Method Name="Abort" Id="{a61a6c0b-6030-4475-b992-98b2b130c10d}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="Hold" Id="{e0475413-9d6e-0d10-1b86-688b115f827f}">
+      <Declaration><![CDATA[METHOD PUBLIC Hold]]></Declaration>
+    </Method>
+    <Method Name="StateComplete" Id="{243d399f-34e0-4999-a92c-fac012d19dfe}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{de296dca-ddbe-413c-a5ef-5e88b622c2cf}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+    <Method Name="Suspend" Id="{2f703afa-fea1-0aae-04b9-1ccf0ad65f2e}">
+      <Declaration><![CDATA[METHOD PUBLIC Suspend]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

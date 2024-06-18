@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_SuspendingCommands" Id="{293f49ed-8bfe-09e2-1376-339448adb778}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_SuspendingCommands]]></Declaration>
+    <Method Name="Abort" Id="{eeba19f4-7829-42de-8172-def3802d77b2}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="StateComplete" Id="{718678b5-02aa-4eda-af48-80c3a021e43d}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{9ebfdf27-b9c6-4d01-bc02-dec0c76bb3f5}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_StoppingCommands" Id="{28886706-ab5d-0d83-1519-135622573c5d}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_StoppingCommands]]></Declaration>
+    <Method Name="StateComplete" Id="{039fc134-3968-456c-a60f-00bf64667845}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

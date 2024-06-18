@@ -1,0 +1,3 @@
+[submodule "src/library-descriptor"]
+	path = src/library-descriptor
+	url = https://github.com/nepionic/library-descriptor

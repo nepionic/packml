@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.6">
+  <Itf Name="I_StartingCommands" Id="{dbee54f7-1ba1-0294-0b8c-497189d1fd31}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_StartingCommands]]></Declaration>
+    <Method Name="Abort" Id="{c79c1a54-d781-4585-a291-0aef57d2344b}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+    <Method Name="StateComplete" Id="{b2cdb4af-05c0-47c8-a414-af6e38aeb8b7}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>
