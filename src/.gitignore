@@ -82,6 +82,7 @@ tchmipublish.journal.json
 *.occ
 *.tizip
 *.plcproj.orig
+.vs/
 
 ### VS Code files ###
 *.vscode
