@@ -26,7 +26,8 @@
     <DefaultNamespace>nepionic_packml</DefaultNamespace>
     <Placeholder>nepionic-packml</Placeholder>
     <VirtualLibrary>true</VirtualLibrary>
-    <LanguageModelAttributeForLibrary>qualified-access-only</LanguageModelAttributeForLibrary>
+    <LanguageModelAttributeForLibrary>
+    </LanguageModelAttributeForLibrary>
     <CombineIds>true</CombineIds>
     <LibraryCategories>
       <LibraryCategory xmlns="">
@@ -38,7 +39,10 @@
     <SelectedLibraryCategories>
       <Id xmlns="">{46053745-d7f0-400c-8eb2-724fde9d8a3b}</Id>
     </SelectedLibraryCategories>
-    <DocFormat>TcDocGen</DocFormat>
+    <DocFormat>
+    </DocFormat>
+    <WriteBookmarksToFile>true</WriteBookmarksToFile>
+    <ObjectRepresentation>base64</ObjectRepresentation>
   </PropertyGroup>
   <ItemGroup>
     <PlaceholderReference Include="Tc3_Module">
