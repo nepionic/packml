@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{CA1FF934-BD33-4472-9CEC-EE76ACF88088}" Name="nepionic-packml-test" PrjFilePath="nepionic-packml-test.plcproj" TmcFilePath="nepionic-packml-test.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{7DFF8C0A-E0DB-E726-72CD-3BC2788C0A45}" TmcPath="nepionic-packml-test.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{FBEFDB85-F990-F637-3A01-F33DB21663AE}" TmcPath="nepionic-packml-test.tmc">
 					<Name>Test Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

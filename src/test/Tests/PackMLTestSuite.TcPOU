@@ -10,7 +10,7 @@ END_VAR]]></Declaration>
     <Method Name="CheckBasicStateMachineCycle" Id="{bf387793-5f99-0aa2-3285-02bd6db473a3}">
       <Declaration><![CDATA[METHOD PUBLIC CheckBasicStateMachineCycle
 VAR
-	stateMachine : nepionic_packml.StateMachine;
+	stateMachine : nepionic_packml.StateMachine<State.IDLE>;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[Test('CheckStateMachine');

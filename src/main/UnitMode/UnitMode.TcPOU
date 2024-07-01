@@ -4,9 +4,13 @@
     <Declaration><![CDATA[{attribute 'linkalways'} 
 {attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
 {attribute 'enable_dynamic_creation'}
-FUNCTION_BLOCK PUBLIC ABSTRACT UnitMode IMPLEMENTS I_UnitMode
+FUNCTION_BLOCK PUBLIC ABSTRACT UnitMode
+VAR_GENERIC CONSTANT
+	initialState : State := State.IDLE;
+END_VAR
+IMPLEMENTS I_UnitMode
 VAR
-	stateMachine : StateMachine;
+	stateMachine : StateMachine<initialState>;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
