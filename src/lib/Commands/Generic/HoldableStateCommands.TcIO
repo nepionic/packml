@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="HoldableStateCommands" Id="{045fffe5-c212-0816-1984-6a705dc8c922}">
+    <Declaration><![CDATA[INTERFACE PUBLIC HoldableStateCommands EXTENDS __System.IQueryInterface]]></Declaration>
+    <Method Name="Hold" Id="{551ebce7-7697-0fdc-339e-d35a91bb7421}">
+      <Declaration><![CDATA[METHOD PUBLIC Hold]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

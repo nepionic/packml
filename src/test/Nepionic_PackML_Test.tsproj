@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21">
 	<Project ProjectGUID="{8204D287-F0E8-4618-B6D3-B5782B4F5137}" TargetNetId="199.4.42.250.1.1" Target64Bit="true" ShowHideConfigurations="#x3c7">
 		<System>
 			<Settings MaxCpus="64" NonWinCpus="63"/>
@@ -11,7 +11,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{CA1FF934-BD33-4472-9CEC-EE76ACF88088}" Name="Nepionic_PackML_Test" PrjFilePath="Nepionic_PackML_Test.plcproj" TmcFilePath="Nepionic_PackML_Test.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{0B38C07F-EB8F-DC8F-03A0-9FEF0A641E18}" TmcPath="Nepionic_PackML_Test.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{56B505E0-B030-40C9-FC45-DB6012E31B07}" TmcPath="Nepionic_PackML_Test.tmc">
 					<Name>Nepionic_PackML_Test Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

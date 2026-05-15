@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="SuspendingCommands" Id="{293f49ed-8bfe-09e2-1376-339448adb778}">
+    <Declaration><![CDATA[INTERFACE PUBLIC SuspendingCommands EXTENDS RunningStateCommands, ActionStateCommands, HoldableStateCommands]]></Declaration>
+  </Itf>
+</TcPlcObject>

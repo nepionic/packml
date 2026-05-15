@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # TcXaeShell Solution File, Format Version 11.00
 VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "Nepionic_PackML_Test", "test\Nepionic_PackML_Test.tsproj", "{8204D287-F0E8-4618-B6D3-B5782B4F5137}"
+Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "Nepionic_PackML_Test", "src\test\Nepionic_PackML_Test.tsproj", "{8204D287-F0E8-4618-B6D3-B5782B4F5137}"
 EndProject
-Project("{DFBE7525-6864-4E62-8B2E-D530D69D9D96}") = "Nepionic_PackML", "main\Nepionic_PackML.tspproj", "{44AFE713-155B-42DC-9529-6BB08F0027E4}"
+Project("{DFBE7525-6864-4E62-8B2E-D530D69D9D96}") = "Nepionic_PackML_Lib", "src\lib\Nepionic_PackML_Lib.tspproj", "{44AFE713-155B-42DC-9529-6BB08F0027E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

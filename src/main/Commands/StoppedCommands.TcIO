@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.12">
-  <Itf Name="StoppedCommands" Id="{1719d416-8cac-0ada-1b61-0b25b7a48bba}">
-    <Declaration><![CDATA[INTERFACE StoppedCommands]]></Declaration>
-    <Method Name="Reset" Id="{feb743ed-94f8-07ef-3bbd-fcb7c4d31c83}">
-      <Declaration><![CDATA[METHOD PUBLIC Reset]]></Declaration>
-    </Method>
-  </Itf>
-</TcPlcObject>

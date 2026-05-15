@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="UnholdingCommands" Id="{2ed69181-4160-0c5d-1d9d-bb7c14caa326}">
+    <Declaration><![CDATA[INTERFACE PUBLIC UnholdingCommands EXTENDS RunningStateCommands, ActionStateCommands, HoldableStateCommands]]></Declaration>
+  </Itf>
+</TcPlcObject>

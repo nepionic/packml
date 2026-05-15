@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="HoldingCommands" Id="{af08fee2-ed8e-0073-1bb5-3408d155c093}">
+    <Declaration><![CDATA[INTERFACE PUBLIC HoldingCommands EXTENDS RunningStateCommands, ActionStateCommands]]></Declaration>
+  </Itf>
+</TcPlcObject>

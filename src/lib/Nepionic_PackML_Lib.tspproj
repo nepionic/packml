@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.19">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.21">
 	<Project ProjectGUID="{44AFE713-155B-42DC-9529-6BB08F0027E4}" Target64Bit="true" ShowHideConfigurations="#x3c6">
-		<System>
-			<TypeSystem>
-				<AdditionalTmcFile Name="Nepionic_PackML_Events" File="Nepionic_PackML_Events.tmc"/>
-			</TypeSystem>
-		</System>
 		<Plc>
 			<Project GUID="{2D11FEE2-AF73-4134-9CEF-CF3221FCF326}" Name="Nepionic_PackML" PrjFilePath="Nepionic_PackML.plcproj" TmcFilePath="Nepionic_PackML.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e"/>
 		</Plc>

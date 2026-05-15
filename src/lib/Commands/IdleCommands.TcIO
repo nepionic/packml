@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="IdleCommands" Id="{98a18d41-1301-03fd-1f24-fccf520ed562}">
+    <Declaration><![CDATA[INTERFACE PUBLIC IdleCommands EXTENDS RunningStateCommands]]></Declaration>
+    <Method Name="Start" Id="{10ff5ee6-413f-0d0d-317f-29627efddc1f}">
+      <Declaration><![CDATA[METHOD PUBLIC Start]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

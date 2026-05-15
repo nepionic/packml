@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.2.0.0" ProductVersion="3.1.4026.13" Encoding="base64">
+<TcPlcObject Version="1.2.0.0" ProductVersion="3.1.4026.18" Encoding="base64">
   <POU Name="StateMachine" Id="{d0abcf5f-9f24-0f8a-39bf-7fb2dc7397ff}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'linkalways'} 
 {attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
@@ -28,6 +28,7 @@ IMPLEMENTS
 	StoppingCommands
 VAR
 	current_state : State := initial_state;
+	logger : DefaultLogger(__POUNAME());
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
@@ -41,7 +42,7 @@ END_VAR]]></Declaration>
 	RETURN;
 END_IF
 
-LogCommand('Abort');
+logger.Debug('Abort() called, aborting');
 ChangeState(State.Aborting);]]></ST>
       </Implementation>
     </Method>
@@ -51,16 +52,19 @@ VAR_INPUT
 	state : State;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[ExitingState(current_state);
-current_state := state;
-EnteringState(current_state);]]></ST>
+        <ST><![CDATA[logger
+	.WithIntAttribute('exiting_state', current_state)
+	.WithIntAttribute('entering_state', state)
+	.Debug('Changing state');
+
+current_state := state;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Clear" Id="{9396148d-9c12-0773-2317-67670be02645}">
       <Declaration><![CDATA[METHOD PUBLIC Clear]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF IsAborted THEN
-	LogCommand('Clear');
+	logger.Debug('Clear() called, clearing');
 	ChangeState(State.Clearing);
 END_IF]]></ST>
       </Implementation>
@@ -75,37 +79,19 @@ PROPERTY PUBLIC CurrentState : State]]></Declaration>
         </Implementation>
       </Get>
     </Property>
-    <Method Name="EnteringState" Id="{1efb7a44-a0ad-0db2-0376-3a7458e62fe6}" FolderPath="Private\">
-      <Declaration><![CDATA[METHOD PRIVATE EnteringState
-VAR_INPUT
-	state : State;
-END_VAR
-VAR
-	state_string : STRING;
-END_VAR]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[state_string := TO_STRING(state);]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="ExitingState" Id="{dd71a62b-774d-023f-204c-c7ab4bf8d0bd}" FolderPath="Private\">
-      <Declaration><![CDATA[METHOD PRIVATE ExitingState
-VAR_INPUT
-	state : State;
-END_VAR
-VAR
-	state_string : STRING;
-END_VAR]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[state_string := TO_STRING(state);]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="Hold" Id="{98bda4c7-ff86-0dff-1078-c505b4eb1fca}">
+    <Method Name="Hold" Id="{3a4b706a-ca4e-0639-2658-d400b09e0e2d}">
       <Declaration><![CDATA[METHOD PUBLIC Hold]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF IsExecuting THEN
-	LogCommand('Hold');
-	ChangeState(State.Holding);
-END_IF]]></ST>
+        <ST><![CDATA[CASE current_state OF
+	State.Execute,
+	State.Starting,
+	State.Suspending,
+	State.Suspended,
+	State.Unsuspending,
+	State.Unholding:
+		logger.Debug('Hold() called, holding');
+		ChangeState(State.Holding);	
+END_CASE]]></ST>
       </Implementation>
     </Method>
     <Property Name="IsAborted" Id="{37f26d46-e89f-0bd2-1c89-168491019708}" FolderPath="Properties\">
@@ -278,20 +264,11 @@ PROPERTY PUBLIC IsUnsuspending : BOOL]]></Declaration>
         </Implementation>
       </Get>
     </Property>
-    <Method Name="LogCommand" Id="{37762c3a-2d13-0cbb-21a5-6960acdd3080}" FolderPath="Private\">
-      <Declaration><![CDATA[METHOD PRIVATE LogCommand
-VAR_INPUT
-	command : STRING;
-END_VAR]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Method>
     <Method Name="Reset" Id="{d90e7afe-b91e-0cda-1d6c-c4d6ece2bbff}">
       <Declaration><![CDATA[METHOD PUBLIC Reset]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF IsStopped OR IsCompleted THEN
-	LogCommand('Reset');
+	logger.Debug('Reset() called, resetting');
 	ChangeState(State.Resetting);
 END_IF]]></ST>
       </Implementation>
@@ -300,7 +277,7 @@ END_IF]]></ST>
       <Declaration><![CDATA[METHOD PUBLIC Start]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF IsIdle THEN
-	LogCommand('Start');
+	logger.Debug('Start() called, starting');
 	ChangeState(State.Starting);
 END_IF]]></ST>
       </Implementation>
@@ -308,60 +285,30 @@ END_IF]]></ST>
     <Method Name="StateComplete" Id="{c682b564-7529-04fa-0c1e-e9fdfee0251d}">
       <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
       <Implementation>
-        <ST><![CDATA[CASE current_state OF 
-	State.Idle:
-		RETURN;
-	
-	State.Starting:
-		ChangeState(State.Execute);
-		
-	State.Execute:
-		ChangeState(State.Completing);
-		
-	State.Completing:
-		ChangeState(State.Completed);
-	
-	State.Completed:
-		RETURN;
-	
-	State.Stopping:
-		ChangeState(State.Stopped);
-	
-	State.Stopped:
-		RETURN;
-	
-	State.Resetting:
-		ChangeState(State.Idle);
-	
-	State.Holding:
-		ChangeState(State.Held);
-	
-	State.Held:
-		RETURN;
-	
-	State.Unholding:
-		ChangeState(State.Execute);
-	
-	State.Suspending:
-		ChangeState(State.Suspended);
-	
-	State.Suspended:
-		RETURN;
-	
-	State.Unsuspending:
-		ChangeState(State.Execute);
-	
-	State.Clearing:
-		ChangeState(State.Stopped);
-	
-	State.Aborted:
-		RETURN;
-	
-	State.Aborting:
-		ChangeState(State.Aborted);
+        <ST><![CDATA[CASE current_state OF
+	State.Idle: RETURN;
+	State.Completed: RETURN;
+	State.Stopped: RETURN;
+	State.Held: RETURN;
+	State.Suspended: RETURN;
+	State.Aborted: RETURN;
 END_CASE
 
-LogCommand('StateComplete');]]></ST>
+logger.Debug('StateComplete() called, changing to new state');
+
+CASE current_state OF
+	State.Starting: ChangeState(State.Execute);
+	State.Execute: ChangeState(State.Completing);
+	State.Completing: ChangeState(State.Completed);
+	State.Stopping: ChangeState(State.Stopped);
+	State.Resetting: ChangeState(State.Idle);
+	State.Holding: ChangeState(State.Held);
+	State.Unholding: ChangeState(State.Execute);
+	State.Suspending: ChangeState(State.Suspended);
+	State.Unsuspending: ChangeState(State.Execute);
+	State.Clearing: ChangeState(State.Stopped);
+	State.Aborting: ChangeState(State.Aborted);
+END_CASE]]></ST>
       </Implementation>
     </Method>
     <Method Name="Stop" Id="{d82a4727-6fb4-0660-1c24-5c5fff9a3863}">
@@ -375,7 +322,7 @@ LogCommand('StateComplete');]]></ST>
 	State.Aborting: RETURN;
 END_CASE
 
-LogCommand('Stop');
+logger.Debug('Stop() called, stopping');
 ChangeState(State.Stopping);]]></ST>
       </Implementation>
     </Method>
@@ -383,7 +330,7 @@ ChangeState(State.Stopping);]]></ST>
       <Declaration><![CDATA[METHOD PUBLIC Suspend]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF IsExecuting THEN 
-	LogCommand('Suspend');
+	logger.Debug('Suspend() called, suspending');
 	ChangeState(State.Suspending);
 END_IF]]></ST>
       </Implementation>
@@ -392,7 +339,7 @@ END_IF]]></ST>
       <Declaration><![CDATA[METHOD PUBLIC Unhold]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF IsHeld THEN
-	LogCommand('Unhold');
+	logger.Debug('Unhold() called, unholding');
 	ChangeState(State.Unholding);
 END_IF]]></ST>
       </Implementation>
@@ -401,7 +348,7 @@ END_IF]]></ST>
       <Declaration><![CDATA[METHOD PUBLIC Unsuspend]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF IsSuspended THEN
-	LogCommand('Unsuspend');
+	logger.Debug('Unsuspend() called, unsuspending');
 	ChangeState(State.Unsuspending);
 END_IF]]></ST>
       </Implementation>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="ClearedStateCommands" Id="{e37a0826-6562-0f43-3b89-25b56eaa6db9}">
+    <Declaration><![CDATA[INTERFACE PUBLIC ClearedStateCommands EXTENDS __System.IQueryInterface]]></Declaration>
+    <Method Name="Abort" Id="{0a18bd59-645a-0630-0a33-290af6af5463}">
+      <Declaration><![CDATA[METHOD PUBLIC Abort]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

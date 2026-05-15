@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="StartingCommands" Id="{dbee54f7-1ba1-0294-0b8c-497189d1fd31}">
+    <Declaration><![CDATA[INTERFACE PUBLIC StartingCommands EXTENDS RunningStateCommands, ActionStateCommands, HoldableStateCommands]]></Declaration>
+  </Itf>
+</TcPlcObject>

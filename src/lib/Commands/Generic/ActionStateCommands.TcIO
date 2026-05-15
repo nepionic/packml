@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="ActionStateCommands" Id="{a46ba3c8-bd22-0fe2-07b3-992c6e493e6e}">
+    <Declaration><![CDATA[INTERFACE PUBLIC ActionStateCommands EXTENDS __System.IQueryInterface]]></Declaration>
+    <Method Name="StateComplete" Id="{22da8347-601b-0ad6-2422-0601632470f0}">
+      <Declaration><![CDATA[METHOD PUBLIC StateComplete]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

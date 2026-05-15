@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="RunningStateCommands" Id="{ac5a4eeb-897a-00c7-1851-dd2208974572}">
+    <Declaration><![CDATA[INTERFACE PUBLIC RunningStateCommands EXTENDS ClearedStateCommands]]></Declaration>
+    <Method Name="Stop" Id="{3a91096d-df44-014e-055d-25aa25dac5d2}">
+      <Declaration><![CDATA[METHOD PUBLIC Stop]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

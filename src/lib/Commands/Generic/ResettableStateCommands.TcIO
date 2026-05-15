@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="ResettableStateCommands" Id="{33993280-e484-0e96-1fb6-1f93b1411915}">
+    <Declaration><![CDATA[INTERFACE PUBLIC ResettableStateCommands EXTENDS __System.IQueryInterface]]></Declaration>
+    <Method Name="Reset" Id="{3067b572-2c86-00cd-3d4d-873ad3bf1b86}">
+      <Declaration><![CDATA[METHOD PUBLIC Reset]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

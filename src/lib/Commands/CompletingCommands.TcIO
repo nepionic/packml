@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="CompletingCommands" Id="{81f78d50-be70-0fcb-055f-f4ffcddca7b0}">
+    <Declaration><![CDATA[INTERFACE PUBLIC CompletingCommands EXTENDS RunningStateCommands, ActionStateCommands]]></Declaration>
+  </Itf>
+</TcPlcObject>

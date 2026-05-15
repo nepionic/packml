@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.18">
+  <Itf Name="HeldCommands" Id="{39048063-0d8e-08f0-155a-0e9a16743f7e}">
+    <Declaration><![CDATA[INTERFACE PUBLIC HeldCommands EXTENDS RunningStateCommands]]></Declaration>
+    <Method Name="Unhold" Id="{b1afe03d-1a2c-0ac6-15ac-16a5319470a8}">
+      <Declaration><![CDATA[METHOD PUBLIC Unhold]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>
