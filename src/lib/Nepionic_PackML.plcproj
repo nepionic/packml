@@ -17,7 +17,7 @@
     <Implicit_Jitter_Distribution>{81be4ae9-e6b5-4ad6-af15-c5cbbd88172a}</Implicit_Jitter_Distribution>
     <LibraryReferences>{4786f3f5-297d-4500-9ec3-c65fd75076db}</LibraryReferences>
     <Company>Nepionic</Company>
-    <Released>false</Released>
+    <Released>true</Released>
     <POUsForPropertyAccessIncluded>false</POUsForPropertyAccessIncluded>
     <GlobalVersionStructureIncluded>false</GlobalVersionStructureIncluded>
     <Title>Nepionic_PackML</Title>
